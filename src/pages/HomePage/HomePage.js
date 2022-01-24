@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { CircularProgress } from '@mui/material';
 import { PageWrapper } from '../../components';
 import { PhotoGrid } from '../../containers';
 import { getAllImages } from '../../services';
@@ -16,11 +17,10 @@ const HomePage = () => {
         loadAllImages();
     }, []);
 
-    console.log('-- IMAGES --', images);
+    // console.log('-- IMAGES --', images);
     return (
         <PageWrapper pageName='Slalom Pets'>
-            <PhotoGrid images={images} />
-            {images.length}
+            {images.length > 0 ? <PhotoGrid images={images} /> : <CircularProgress />}
         </PageWrapper>
     );
 }
