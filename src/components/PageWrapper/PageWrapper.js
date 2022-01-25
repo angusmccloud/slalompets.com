@@ -17,7 +17,7 @@ const PageWrapper = (props) => {
           </Toolbar>
         </AppBar>
       </Box>
-      <div style={{padding: 20}}>
+      <div style={{paddingLeft: 20, paddingRight: 20}}>
         {props.children}
       </div>
     </div>
